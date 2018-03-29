@@ -12,13 +12,11 @@ func (head *LinkedList) Add(newNode *LinkedList) {
 		return
 	}
 
-	temp := head
-
-	for temp.Next != nil {
-		temp = temp.Next
+	for head.Next != nil {
+		head = head.Next
 	}
 
-	temp.Next = newNode
+	head.Next = newNode
 }
 
 func (head *LinkedList) Print() {
@@ -40,7 +38,6 @@ func (head *LinkedList) Length() int {
 func New(val int) *LinkedList {
 	node := new(LinkedList)
 	node.Val = val
-	node.Next = nil
 	return node
 }
 
