@@ -14,7 +14,7 @@ func (head *LinkedList) Add(newNode *LinkedList) {
 
 	temp := head
 
-	for ; temp.Next != nil; {
+	for temp.Next != nil {
 		temp = temp.Next
 	}
 
@@ -22,7 +22,7 @@ func (head *LinkedList) Add(newNode *LinkedList) {
 }
 
 func (head *LinkedList) Print() {
-	for ; head != nil; {
+	for head != nil {
 		fmt.Println(head.Val)
 		head = head.Next
 	}
@@ -30,7 +30,7 @@ func (head *LinkedList) Print() {
 
 func (head *LinkedList) Length() int {
 	length := 0
-	for ; head != nil; {
+	for head != nil {
 		length++
 		head = head.Next
 	}
@@ -48,7 +48,7 @@ func (list *LinkedList) HasCycle() bool {
 	slow := list
 	fast := list
 
-	for ; fast.Next != nil && fast.Next.Next != nil; {
+	for fast.Next != nil && fast.Next.Next != nil {
 		if fast.Next == slow || fast.Next.Next == slow {
 			return true
 		}
